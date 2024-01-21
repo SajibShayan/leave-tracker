@@ -1,21 +1,23 @@
 <script setup>
+import AdminLayout from "@/Layouts/AdminLayout.vue";
+import { Head } from "@inertiajs/vue3";
 import { reactive } from "vue";
-import AdminLayout from "../../../Layouts/AdminLayout.vue";
 
 const state = reactive({
   imageModal: false,
   images: [],
 });
 
-const getImageUploadResponse = (response) => {
-  state.imageModal = false;
-  state.images = response;
-};
+
 </script>
 <template>
+  <Head title="Banner"/>
   <AdminLayout>
     <template #main>
-      <button class="btn-primary" @click="state.imageModal = true">Upload modal</button>
+      <div class="text-red border">Hello man from create page.....!</div>
+
+      <button class="btn-primary">Upload modal</button>
+
     </template>
   </AdminLayout>
 

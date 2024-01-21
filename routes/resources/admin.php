@@ -3,6 +3,12 @@
 declare(strict_types=1);
 
 // use App\Http\Controllers\Admin\Auth\LogoutController;
+
+use App\Http\Controllers\Admin\Banner\
+{
+    CreateBannerController,
+    IndexBannerController
+};
 use App\Http\Controllers\Admin\Dashboard\IndexDashboardController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -20,6 +26,12 @@ Route::middleware(['auth'])->group(function () {
     // dashboard route
     Route::group(['as' => 'dashboard:'], function () {
         Route::get('/', IndexDashboardController::class)->name('index');
+    });
+
+     // banner route
+     Route::group(['prefix' => 'banners', 'as' => 'banners:'], function () {
+        Route::get('/', IndexBannerController::class)->name('index');
+        Route::get('/create', CreateBannerController::class)->name('create');
     });
 
 

@@ -28,6 +28,7 @@ import {
     MapIcon,
 } from "@heroicons/vue/24/outline";
 import { useParentRouteName } from "@/Composable/fetch";
+import { router } from "@inertiajs/vue3";
 
 
 const navigation = ref([
@@ -39,7 +40,7 @@ const navigation = ref([
     },
     {
         name: "Banner",
-        href: "/banner",
+        href: "admin:banners:index",
         icon: PhotoIcon,
         current: false,
     },
@@ -134,6 +135,7 @@ const navigation = ref([
             <div
                 v-for="item in navigation"
                 :key="item.name"
+                @click="router.visit(route(item.href))"
                 class="w-full flex items-center text-blue-400 h-10 pl-4 hover:bg-gray-200 rounded-lg cursor-pointer"
                 :class="
                     route().current(item.href) ||
