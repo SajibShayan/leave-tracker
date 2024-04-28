@@ -13,7 +13,7 @@ class IndexBannerController extends Controller
      */
     public function __invoke(Request $request)
     {
-        return Inertia::render('Admin/Banner/Index',[
+        return Inertia::render('Admin/Banner/Index', [
 
         ]);
     }

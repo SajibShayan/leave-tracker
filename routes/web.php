@@ -38,7 +38,7 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 Route::group([], function () {
-    
+
     Route::prefix('admin')->as('admin:')
         ->group(
             base_path('routes/resources/admin.php'),

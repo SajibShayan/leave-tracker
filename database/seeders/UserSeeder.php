@@ -41,6 +41,6 @@ class UserSeeder extends Seeder
         $admin->assignRole('admin');
         $seller->assignRole('seller');
         $buyer->assignRole('buyer');
-    
+
     }
 }
