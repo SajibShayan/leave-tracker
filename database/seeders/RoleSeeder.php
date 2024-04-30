@@ -16,6 +16,7 @@ class RoleSeeder extends Seeder
             'admin',
             'buyer',
             'seller',
+            'user',
         ];
 
         Role::insert(array_map(fn ($role) => [
